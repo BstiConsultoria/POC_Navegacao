@@ -10,6 +10,13 @@
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/menu_drawer.css" rel="stylesheet">
+	<link href="css/login.css" rel="stylesheet">
+	<link href="css/social.css" rel="stylesheet">
+	<link href="css/account.css" rel="stylesheet">
+	<!--
+	<link href="css/nav_lateral.css" rel="stylesheet">
+	-->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -25,7 +32,26 @@
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="js/bootstrap.min.js"></script>
   <script type="text/javascript" src="js/menu_drawer.js"></script>
-
+  
+  <!--
+  <script type="text/javascript" src="js/nav_lateral.js"></script>
+	-->
+  <script type="text/javascript">
+  
+    $(document).ready(function () {
+	
+		var areaLogada = false;
+	
+		$('#frmLogin').hide();
+	
+		$('a#idLogin').on('click', function(event) {
+			// Essa função anônima pode conter uma lógica mais complexa.
+			$('#frmLogin').show();
+		});
+	});
+	
+  </script>
+  
   <style>
 	.panel-footer .cell{
 		height:120px;
@@ -35,7 +61,7 @@
 		top: 50%;
 		transform: translateY(-50%);
 	}
-	.glyphicon
+	.glyphicon 
 	{
 		font-size:14px;color:#FF6600
 	}
@@ -67,16 +93,140 @@
 					<li class="linkedin"><a href="#" data-toggle="tooltip" title="LinkedIn"><i class="fa fa-linkedin fa-lg"></i></a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-				  <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-				  <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+					<li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+					<li class="dropdown">
+					    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> Minha Conta<b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li>
+								<div class="navbar-content">
+									<div class="row">
+										<div class="col-md-5">
+											<!--<img src="http://placehold.it/120x120"-->
+											<img id="profile-img" class="img-responsive" src="img/20141225_203013.jpg"
+												alt="Alternate Text" class="img-responsive" />
+											<p class="text-center small">
+												<a href="#">Change Photo</a></p>
+										</div>
+										<div class="col-md-7">
+											<span>Luis Silva</span>
+											<p class="text-muted small">
+												lroberto.silva.sp@gmail.com</p>
+											<div class="divider">
+											</div>
+											<a href="#" class="btn btn-primary btn-sm active">View Profile</a>
+										</div>
+									</div>
+								</div>
+								<div class="navbar-footer">
+									<div class="navbar-footer-content">
+										<div class="row">
+											<div class="col-md-6">
+												<a href="#" class="btn btn-default btn-sm">Change Passowrd</a>
+											</div>
+											<div class="col-md-6">
+												<a href="http://www.jquery2dotnet.com" class="btn btn-default btn-sm pull-right">Sign Out</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li><a href="#" id="idLogin"><span class="glyphicon glyphicon-log-in"></span> Olá. Faça seu Login</a></li>
+					<li><a href="#">             <span class="glyphicon glyphicon-log-out"></span> Sair</a></li>
+					<li><a href="#">             <span class="glyphicon glyphicon-info-sign"></span></span> Help</a></li>
 				</ul>
 			</nav>
 		</div>
 	  </div>
 	</nav>	
+<!--
+<nav class="navbar navbar-m2p sidebar" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+                Favoritos
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active open">
+                  <a href="#">
+                      <span class="pull-right hidden-xs showopacity glyphicon material-icons">av_timer</span> Dashboard
+                  </a>
+                </li>
+                <li class="">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <span class="menu-icon pull-right hidden-xs showopacity glyphicon material-icons">burst_mode</span>
+                        Banners <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu forAnimate" role="menu">
+                        <li><a href="#"><i class="material-icons">add</i> Add</a></li>
+                        <li><a href="#"><i class="material-icons">sort</i> List</a></li>
+                    </ul>
+                </li>
+                <li class="separator">Content</li>
+                <li class="">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <span class="menu-icon pull-right hidden-xs showopacity glyphicon material-icons">description</span>
+                        Pages <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu forAnimate" role="menu">
+                        <li><a href="#"><i class="material-icons">add</i> Add</a></li>
+                        <li><a href="#"><i class="material-icons">sort</i> List</a></li>
+                    </ul>
+                </li>
+                <li class="">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <span class="menu-icon pull-right hidden-xs showopacity glyphicon material-icons">chat_bubble_outline</span>
+                        Blog <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu forAnimate" role="menu">
+                        <li><a href="#"><i class="material-icons">add</i> Add</a></li>
+                        <li><a href="#"><i class="material-icons">sort</i> List</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon material-icons">label</span>
+                        Tags <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu forAnimate" role="menu">
+                        <li><a href="#"> <i class="material-icons">add</i> Add</a></li>
+                        <li><a href="#"> <i class="material-icons">sort</i> List</a></li>
+                    </ul>
+                </li>
+                <li class="separator">System</li>
+                <li class="#">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <span class="menu-icon pull-right hidden-xs showopacity glyphicon material-icons">group</span>
+                        Users <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu forAnimate" role="menu">
+                        <li><a href="#"><i class="material-icons">add</i> Add</a></li>
+                        <li><a href="#"><i class="material-icons">sort</i> List</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="menu-icon pull-right hidden-xs showopacity glyphicon material-icons">exit_to_app</span> Exit
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>	
+-->
 	
 	<div class="container">
-		<!--
+
+	<!--
 		<form class="navbar-form navbar-right">
 		  <div class="input-group">
 			<input type="text" class="form-control" placeholder="Search">
@@ -90,55 +240,151 @@
 		-->
 		
 		<H1>Módulos</H1>
+		
+		<form>
+			<div class="container">
+				<div class="row">
+					<div class="form-group col-md-3">
+						<a class="btn btn-block btn-lg btn-info" data-toggle="modal" data-target="#mymodal">
+							<i class="fa fa-pied-piper-alt" id="icone_grande"></i> <br><br>
+							<span class="texto_grande"><i class="fa fa-list-ul"></i>Dashboard</span>
+						</a>
+					</div> 
+					<div class="form-group col-md-3">
+						<a class="btn btn-block btn-lg btn-success" data-toggle="modal" data-target="#mymodal">
+							<i class="fa fa-users" id="icone_grande"></i> <br><br>
+							<span class="texto_grande"><i class="fa fa-plus-circle"></i>Clientes</span>
+						</a>
+					</div>
+					<div class="form-group col-md-3">
+						<a class="btn btn-block btn-lg btn-warning" data-toggle="modal" data-target="#mymodal">
+							<i class="fa fa-pied-piper-alt" id="icone_grande"></i> <br><br>
+							<span class="texto_grande"><i class="fa fa-list-ul"></i>Pedidos</span>
+						</a>
+					</div> 
+					<div class="form-group col-md-3">
+						<a class="btn btn-block btn-lg btn-danger" data-toggle="modal" data-target="#mymodal">
+							<i class="fa fa-user" id="icone_grande"></i> <br><br>
+							<span class="texto_grande"><i class="fa fa-times-circle-o"></i>Delivery</span>
+						</a>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-md-3">
+						<a class="btn btn-block btn-lg btn-warning" data-toggle="modal" data-target="#mymodal">
+							<i class="fa fa-pied-piper-alt" id="icone_grande"></i> <br><br>
+							<span class="texto_grande"><i class="fa fa-list-ul"></i>Estoque</span>
+						</a>
+					</div> 
+					<div class="form-group col-md-3">
+						<a class="btn btn-block btn-lg btn-primary" data-toggle="modal" data-target="#mymodal">
+							<i class="fa fa-cog fa-spin" id="icone_grande"></i> <br><br>
+							<span class="texto_grande"><i class="fa fa-edit"></i>Administrativo</span>
+						</a>
+					</div>
+					<div class="form-group col-md-3">
+						<a class="btn btn-block btn-lg btn-info" data-toggle="modal" data-target="#mymodal">
+							<i class="fa fa-cog fa-spin" id="icone_grande"></i> <br><br>
+							<span class="texto_grande"><i class="fa fa-edit"></i>Configurações</span>
+						</a>
+					</div>
+					<div class="form-group col-md-3">
+						<a class="btn btn-block btn-lg btn-success" data-toggle="modal" data-target="#mymodal">
+							<i class="fa fa-users" id="icone_grande"></i> <br><br>
+							<span class="texto_grande"><i class="fa fa-plus-circle"></i>Caixa</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+	
+	<!--<img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png">-->
 
-		  <div class="col-md-3">
-			<a class="btn btn-block btn-lg btn-info" data-toggle="modal" data-target="#mymodal">
-				<i class="fa fa-pied-piper-alt" id="icone_grande"></i> <br><br>
-				<span class="texto_grande"><i class="fa fa-list-ul"></i>Dashboard</span>
-			</a>
-		  </div> 
-		 <div class="col-md-3">
-			<a class="btn btn-block btn-lg btn-success" data-toggle="modal" data-target="#mymodal">
-				<i class="fa fa-users" id="icone_grande"></i> <br><br>
-				<span class="texto_grande"><i class="fa fa-plus-circle"></i>Clientes</span>
-			</a>
-		  </div>
-		  <div class="col-md-3">
-			<a class="btn btn-block btn-lg btn-warning" data-toggle="modal" data-target="#mymodal">
-				<i class="fa fa-pied-piper-alt" id="icone_grande"></i> <br><br>
-				<span class="texto_grande"><i class="fa fa-list-ul"></i>Pedidos</span>
-			</a>
-		  </div> 
-		  <div class="col-md-3">
-			<a class="btn btn-block btn-lg btn-danger" data-toggle="modal" data-target="#mymodal">
-				<i class="fa fa-user" id="icone_grande"></i> <br><br>
-				<span class="texto_grande"><i class="fa fa-times-circle-o"></i>Delivery</span>
-			</a>
-		  </div>
-		  <div class="col-md-3">
-			<a class="btn btn-block btn-lg btn-warning" data-toggle="modal" data-target="#mymodal">
-				<i class="fa fa-pied-piper-alt" id="icone_grande"></i> <br><br>
-				<span class="texto_grande"><i class="fa fa-list-ul"></i>Estoque</span>
-			</a>
-		  </div> 
-		  <div class="col-md-3">
-			<a class="btn btn-block btn-lg btn-primary" data-toggle="modal" data-target="#mymodal">
-				<i class="fa fa-cog fa-spin" id="icone_grande"></i> <br><br>
-				<span class="texto_grande"><i class="fa fa-edit"></i>Administrativo</span>
-			</a>
-		  </div>
-		  <div class="col-md-3">
-			<a class="btn btn-block btn-lg btn-info" data-toggle="modal" data-target="#mymodal">
-				<i class="fa fa-cog fa-spin" id="icone_grande"></i> <br><br>
-				<span class="texto_grande"><i class="fa fa-edit"></i>Configurações</span>
-			</a>
-		  </div>
-		 <div class="col-md-3">
-			<a class="btn btn-block btn-lg btn-success" data-toggle="modal" data-target="#mymodal">
-				<i class="fa fa-users" id="icone_grande"></i> <br><br>
-				<span class="texto_grande"><i class="fa fa-plus-circle"></i>Caixa</span>
-			</a>
-		  </div>
+	<!--
+	 <div class="container">
+        <div class="card card-container">
+    		<img id="profile-img" class="profile-img-card" src="img/20141225_203013.jpg">
+            <p id="profile-name" class="profile-name-card"></p>
+            <form class="form-signin">
+                <span id="reauth-email" class="reauth-email"></span>
+                <input type="email" id="inputEmail" class="form-control" placeholder="Login" required="" autofocus="">
+                <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required="">
+                <div id="remember" class="checkbox">
+                    <label>
+                        <input type="checkbox" value="remember-me"> Remember You?
+                    </label>
+                </div>
+                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Hack Into Google</button>
+            </form>
+            <a href="#" class="forgot-password">
+                Forgot the di*do?It is up your *ss mother f**ker
+            </a>
+        </div>
+    </div>
+	-->
+
+		<div id="frmLogin" class="omb_login">
+		
+			<h3 class="omb_authTitle">Login or <a href="#">Sign up</a></h3>
+			<div class="row omb_row-sm-offset-3 omb_socialButtons">
+				<div class="col-xs-4 col-sm-2">
+					<a href="#" class="btn btn-lg btn-block omb_btn-facebook">
+						<i class="fa fa-facebook visible-xs"></i>
+						<span class="hidden-xs">Facebook</span>
+					</a>
+				</div>
+				<div class="col-xs-4 col-sm-2">
+					<a href="#" class="btn btn-lg btn-block omb_btn-twitter">
+						<i class="fa fa-twitter visible-xs"></i>
+						<span class="hidden-xs">Twitter</span>
+					</a>
+					</div>	
+				<div class="col-xs-4 col-sm-2">
+					<a href="#" class="btn btn-lg btn-block omb_btn-google">
+						<i class="fa fa-google-plus visible-xs"></i>
+						<span class="hidden-xs">Google+</span>
+					</a>
+				</div>	
+			</div>
+
+			<div class="row omb_row-sm-offset-3 omb_loginOr">
+				<div class="col-xs-12 col-sm-6">
+					<hr class="omb_hrOr">
+					<span class="omb_spanOr">or</span>
+				</div>
+			</div>
+			<div class="row omb_row-sm-offset-3">
+				<div class="col-xs-12 col-sm-6">	
+					<form class="omb_loginForm" action="" autocomplete="off" method="POST">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="fa fa-user"></i></span>
+							<input type="text" class="form-control" name="username" placeholder="email address">
+						</div>
+						<span class="help-block"></span>
+											
+						<div class="input-group">
+							<span class="input-group-addon"><i class="fa fa-lock"></i></span>
+							<input  type="password" class="form-control" name="password" placeholder="Password">
+						</div>
+						<span class="help-block">Password error</span>
+						<button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+					</form>
+				</div>
+			</div>
+			<div class="row omb_row-sm-offset-3">
+				<div class="col-xs-12 col-sm-3">
+					<label class="checkbox">
+						<input type="checkbox" value="remember-me">Remember Me
+					</label>
+				</div>
+				<div class="col-xs-12 col-sm-3">
+					<p class="omb_forgotPwd">
+						<a href="#">Forgot password?</a>
+					</p>
+				</div>
+			</div>	    	
+		</div>
 	</div>
 	<footer class="footer navbar-fixed-bottom">
 		<div class="container">
@@ -155,13 +401,36 @@
                 </div>
             </div>
 			-->
-            <div class="row">
-                <div class="col-xs-12">
-                    <p class="text-muted text-center copyright">© Todos os direitos reservados.</p>
-                </div>
-            </div>
-        </div>
+			<div class="row" >
+				<div class="sicon">
+					<div class="col-lg-1 col-md-3 col-sm-2 col-xs-3 text-center">
+						<div class="icon-circle">
+							<a href="#" class="ifacebook" title="Facebook"><i class="fa fa-facebook"></i></a>
+						</div>
+					</div>
+					<div class="col-lg-1 col-md-3 col-sm-2 col-xs-3 text-center">
+						<div class="icon-circle">
+							<a href="#" class="itwittter" title="Twitter"><i class="fa fa-twitter"></i></a>
+						</div>
+					</div>
+					<div class="col-lg-1 col-md-3 col-sm-2 col-xs-3 text-center">
+						<div class="icon-circle">
+							<a href="#" class="igoogle" title="Google+"><i class="fa fa-google-plus"></i></a>
+						</div>
+					</div>
+					<div class="col-lg-1 col-md-3 col-sm-2 col-xs-3 text-center">
+						<div class="icon-circle">
+							<a href="#" class="iLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<p class="text-muted text-center copyright">Copyright © BSTI 2016. Todos os direitos reservados.</p>
+				</div>
+			</div>
+		</div>
     </footer>
-	</div>
   </body>
 </html>	
